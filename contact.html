@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contacto</title>
+</head>
+<body>
+    <main>
+        <h1>Contactenos: </h1>
+        <form action="">
+            <legend>
+                <label for="nombre">Nombre</label>
+                <input type="text" name="nombre" placeholder="Nombre" id="nombre">
+                
+                <label for="apellido">Apellido</label>
+                <input type="text" name="apellido" placeholder="Apellido" id="apellido">
+            </legend>
+            <legend>
+                <label for="telefono">Teléfono</label>
+                <input type="tel" name="telefono" id="telefono">
+            </legend>
+            <fieldset>  
+                    <legend> Mascotas:</legend>
+                    <input type="checkbox" name="perro" id="perro">
+                    <label for="perro">Perro/s</label>
+                    <input type="checkbox" name="gato" id="gato">
+                    <label for="gato">Gato/s</label>
+                    <input type="checkbox" name="otro" id="otro">
+                    <label for="otro">Otro/s</label>
+            </fieldset>
+            <textarea name="mensaje" id="mensaje" cols="30" rows="5" placeholder="Escriba un Mensaje"></textarea>
+            <button type="submit" id="buttonSubmit">Enviar</button>
+        </form>
+    </main>
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="contact.js"></script>
+</body>
+</html>
