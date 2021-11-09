@@ -1,19 +1,19 @@
 
 function renderArticulos (array) {
     let newDiv = document.createElement('div');
-    newDiv.classList.add('estilos-articulos')
-    let body = document.querySelector('body')
+    newDiv.classList.add('row')
+    let main = document.querySelector('main')
     array.forEach(articulo => {
         newDiv.innerHTML += `
-        <div class="div-articulo">
+        <div class="div-articulo col-12 col-lg-4">
             <img src="${articulo.imagen}" width="150px" alt="imagen">
             <h3>${articulo.nombre}</h3>
             <p>${articulo.descripcion}</p>
-            <p>${articulo.precio}</p>
-            <p>${articulo.stock <= 5 ? 'ultima unidades' : articulo.stock}</p>
+            <p>$${articulo.precio}</p>
+            <p>${articulo.stock <= 5 ? 'Ultima unidades' : "Stock: " + articulo.stock}</p>
         </div>
         `
-    body.appendChild(newDiv)
+    main.appendChild(newDiv)
 })
 }
 
