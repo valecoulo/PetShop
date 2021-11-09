@@ -15,11 +15,16 @@ nav {
     min-height: 90vh;
 }
 
+.container-item1 {
+    transform: rotate(-15deg);
+}
+
 #heroe-banner {
     min-height: 90vh;
     display: flex;
     background-image: url(../assets/logobanner.png);
     background-size: cover;    
+    
 }
 
 h1 {
@@ -51,12 +56,12 @@ main .div-main-1 {
     color: white;
      align-items: center;
     justify-content: center;
+    border-radius: 0 17rem 0 0 ;
 }
 
 main .circle-container {
     padding-top: 3rem;
     min-height: 60vh;
-    background-color: violet;
     border-radius: 25%;
     width: 80%;
 }
@@ -71,6 +76,7 @@ main .div-main-1 h2{
 main .div-main-1 p{
     font-size: 0.9rem;
     text-align: justify;
+    
 }
     
     
@@ -78,8 +84,9 @@ main .div-main-1 p{
 
 main .div-main-2 {
     background-image: url(../assets/veterinario-img.png);
-    background-position: center;
+    background-position: top;
     background-size: cover;
+    
 }
 
 /* FOOTER */
