@@ -1,3 +1,8 @@
+fieldset {
+    width: 40vh;
+    margin: 1.5rem;
+}
+
 @import url('https://fonts.googleapis.com/css2?family=Mochiy+Pop+P+One&display=swap');
 
 /* NAVBAR*/ 
@@ -9,6 +14,7 @@
 nav {  
     min-height: 10vh; 
 }
+
 
 /* BANNER */
 #heroe-container {
@@ -64,6 +70,10 @@ main .circle-container {
     min-height: 60vh;
     border-radius: 25%;
     width: 80%;
+    -webkit-border-radius: 25%;
+    -moz-border-radius: 25%;
+    -ms-border-radius: 25%;
+    -o-border-radius: 25%;
 }
 
 main .div-main-1 h2{
@@ -87,6 +97,22 @@ main .div-main-2 {
     background-position: top;
     background-size: cover;
     
+}
+textarea {
+    width: 100%;
+    margin: .6rem auto;
+    border: none;
+    border-radius: .5rem;
+}
+.iframe-map {
+    border-radius: .5rem;
+    box-shadow: 0px 0px 5px #000000;
+}
+.form-style {
+    background-color: #8080801c;
+    border-radius: .6rem;
+    padding: 1rem 0;
+    box-shadow: 0px 0px 8px #000000;
 }
 
 /* FOOTER */
