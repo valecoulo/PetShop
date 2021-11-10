@@ -1,11 +1,11 @@
 function renderArticulos(array) {
-  let newDiv = document.createElement("div");
-  newDiv.classList.add("row");
+  let newDiv = document.querySelector("#articulos");
+  newDiv.innerHTML = "";
   let main = document.querySelector("main");
   array.forEach((articulo) => {
     newDiv.innerHTML += `
           
-              <div class="card m-2" style="width: 20rem;">
+              <div class="card m-2 col-2">
                   <div class="card-body">
                       <img src="${
                         articulo.imagen
@@ -27,16 +27,28 @@ function renderArticulos(array) {
 }
 
 function printMainFunctions(array) {
-  let search = document.querySelector("#buscador");
-  search.addEventListener("search", () => {
-    console.log("value: "+ search.value)
-    
-  })
   
   let juguetes = array.filter((articulo) => articulo.tipo === "Juguete");
   let farmacia = array.filter((articulo) => articulo.tipo === "Medicamento");
-
   document.title === "Juguetes" ? renderArticulos(juguetes) : renderArticulos(farmacia);
+
+  const search = document.querySelector("#buscador");
+  search.addEventListener("keyup", e => {
+    const buscar = e.target.value.toLowerCase()
+    const juguetesFiltrados = juguetes.filter(juguete => {
+          if(juguete.nombre.toLowerCase().includes(buscar)) {
+            return juguete
+          }
+        })
+    const farmaciaFiltrados = farmacia.filter(medicamento => {
+          if(medicamento.nombre.toLowerCase().includes(buscar)) {
+            return medicamento
+          }
+        })
+    document.title === "Juguetes" ? renderArticulos(juguetesFiltrados) : renderArticulos(farmaciaFiltrados);
+  })
+
+  // document.title === "Juguetes" ? renderArticulos(juguetes) : renderArticulos(farmacia);
   let loader = document.querySelectorAll(".loader");
   loader = Array.from(loader)
   loader.forEach(load => load.style.display = "none");
