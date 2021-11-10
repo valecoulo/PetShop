@@ -26,18 +26,25 @@ function renderArticulos(array) {
   });
 }
 
+function printMainFunctions(array) {
+  let juguetes = array.filter((articulo) => articulo.tipo === "Juguete");
+  let farmacia = array.filter(
+    (articulo) => articulo.tipo === "Medicamento"
+  );
+
+  document.title === "Juguetes" ? renderArticulos(juguetes) : renderArticulos(farmacia);
+  let loader = document.querySelectorAll(".loader");
+  loader = Array.from(loader)
+  loader.forEach(load => load.style.display = "none");
+}
+
 let url = "https://apipetshop.herokuapp.com/api/articulos";
 
 fetch(url)
   .then((res) => res.json())
   .then((data) => {
     let articulos = data.response;
-    let juguetes = articulos.filter((articulo) => articulo.tipo === "Juguete");
-    let farmacia = articulos.filter(
-      (articulo) => articulo.tipo === "Medicamento"
-    );
-    document.title === "Juguetes" ? renderArticulos(juguetes) : renderArticulos(farmacia);
-      let loader = document.querySelectorAll(".loader");
-      loader = Array.from(loader)
-      loader.forEach(load => load.style.display = "none");
+    
+    printMainFunctions(articulos);
+
   });
