@@ -5,7 +5,12 @@ fieldset {
 
 @import url('https://fonts.googleapis.com/css2?family=Mochiy+Pop+P+One&display=swap');
 
-/* NAVBAR*/ 
+/* HEADER Y NAVBAR*/ 
+header {
+    margin-bottom: 3rem;
+
+}
+
 #logo-navbar {
     width: 4rem;
     height: 4rem;
@@ -16,7 +21,37 @@ nav {
 }
 
 
-/* BANNER */
+/* CAROUSEL BANNER */
+
+#carouselExampleControls {
+    margin: 0 1.5rem;
+}
+
+.foto-carousel-1 {
+    height: 70vh;
+    width: 100%;
+    background-image: url(../assets/the-pet-shop-steve-crisp.jpg);
+    background-position: bottom;
+    background-size: cover;
+}
+
+.foto-carousel-2 {
+    height: 70vh;
+    width: 100%;
+    background-image: url(../assets/pet-shop-jenny-newland.jpg);
+    background-position: top;
+    background-size: cover;
+}
+
+.foto-carousel-3 {
+    height: 70vh;
+    width: 100%;
+    background-image: url(../assets/Pet-Shop_WEB_a4ba0aed-5a41-414a-afb7-5739da148c44.jpg);
+    background-position: center;
+    background-size: cover;
+}
+
+
 #heroe-container {
     min-height: 90vh;
 }
@@ -45,6 +80,16 @@ h1 {
 }
 
 /*MAIN */
+
+main {
+    margin: 0 1.5rem;
+}
+
+
+#container-main-1 {
+    margin-bottom: 3rem;
+}
+
 
 .main-container {
     min-height:90vh;
