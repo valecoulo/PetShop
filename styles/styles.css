@@ -88,6 +88,22 @@ main .div-main-2 {
     background-size: cover;
     
 }
+textarea {
+    width: 100%;
+    margin: .6rem auto;
+    border: none;
+    border-radius: .5rem;
+}
+.iframe-map {
+    border-radius: .5rem;
+    box-shadow: 0px 0px 5px #000000;
+}
+.form-style {
+    background-color: #80808062;
+    border-radius: .6rem;
+    padding: 1rem 0;
+    box-shadow: 0px 0px 8px #000000;
+}
 
 /* FOOTER */
 

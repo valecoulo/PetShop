@@ -40,17 +40,16 @@
                   <a class="nav-link text-light" aria-current="page" href="./index.html">Home</a>
                 </li>
                 <li class="nav-item ms-5">
+                  <a class="nav-link text-light" aria-current="page" href="#">Farmacia</a>
+                </li>
+                <li class="nav-item ms-5">
+                  <a class="nav-link text-light" aria-current="page" href="#">Juguetes</a>
+                </li>
+                <li class="nav-item ms-5">
                     <a class="nav-link active text-danger" aria-current="page" href="#">Contactanos</a>
-                  </li>
-                  <li class="nav-item ms-5">
-                    <a class="nav-link text-light" aria-current="page" href="#">Farmacia</a>
-                  </li>
-                  <li class="nav-item ms-5">
-                    <a class="nav-link text-light" aria-current="page" href="#">Juguetes</a>
-                  </li>
-              </ul>
+                </li>
+              </ul> 
              
-              
             </div>
             
           </div>
@@ -67,41 +66,48 @@
 
 
 <body>
-    <main>
-        <h1>Contactanos: </h1>
-        <form action="">
-            
-                <label class="form-label" for="nombre">Nombre:</label>
-                <input type="text" name="nombre" placeholder="Nombre" id="nombre">
-                
-                <label class="form-label" for="apellido">Apellido:</label>
-                <input type="text" name="apellido" placeholder="Apellido" id="apellido">
-            
-            
-                <label class="form-label" for="telefono">Teléfono:</label>
-                <input type="tel" name="telefono" id="telefono">
- 
-                <label class="form-label" for="email">E.mail:</label>
-                <input type="email" name="email" id="email" placeholder="juan@hotmail.com">
+    <main class="container-fluid m-auto">
+        <h1 class="text-center p-5">Contactanos: </h1>
+        <div class="row m-auto">
+          <form action="" class="col-12 col-md-6 mb-5 m-auto form-style">
+              <div class="col-6 m-auto">
+                <label class="form-label fw-bold" for="nombre">Nombre:</label>
+                <input class="form-control" type="text" name="nombre" placeholder="Nombre" id="nombre">
+                  
+                <label class="form-label fw-bold" for="apellido">Apellido:</label>
+                <input class="form-control" type="text" name="apellido" placeholder="Apellido" id="apellido">
+              </div>
+              <div class="col-6 m-auto">
+                <label class="form-label fw-bold" for="telefono">Teléfono:</label>
+                <input class="form-control" type="tel" name="telefono" id="telefono">
 
-            <fieldset>  
-                    <legend> Mascotas:
-                    <input type="checkbox" name="perro" id="perro">
-                    <label class="form-label" for="perro">Perro/s</label>
-                    <input type="checkbox" name="gato" id="gato">
-                    <label class="form-label" for="gato">Gato/s</label>
-                    <input type="checkbox" name="otro" id="otro">
-                    <label class="form-label" for="otro">Otro/s</label>
-            </fieldset>
-            <br>
-            <textarea name="mensaje" id="mensaje" cols="30" rows="5" placeholder="Escriba un Mensaje"></textarea>
-            <br>
-            <button type="submit" id="buttonSubmit">Enviar</button>
+                <label class="form-label fw-bold" for="email">Email:</label>
+                <input class="form-control" type="email" name="email" id="email" placeholder="correo@correo.com">
+              </div>
+              <fieldset class="col-6 m-auto">  
+                      <legend class="form-label fw-bold"> Mascotas: </legend>
+                      <input type="checkbox" class="form-check-input" name="perro" id="perro">
+                      <label class="form-label pe-3 fw-bold" for="perro">Perro/s</label>
+                      <input type="checkbox" class="form-check-input" name="gato" id="gato">
+                      <label class="form-label pe-3 fw-bold" for="gato">Gato/s</label>
+                      <input type="checkbox" class="form-check-input" name="otro" id="otro">
+                      <label class="form-label pe-3 fw-bold" for="otro">Otro/s</label>
+              </fieldset>
+              <div class="col-6 m-auto">
+                <textarea name="mensaje" id="mensaje" rows="5" placeholder="Escriba un Mensaje"></textarea>
+              </div>
+              <div class="col-6 m-auto">
+                <button type="submit" class="btn btn-secondary col-12" id="buttonSubmit">Enviar</button>
+              </div> 
+              
+            </form>
+                      
+        </div>
 
-            <img src="" alt="">
-
-        </form>
-    </main>
+        <div class="col-12 mb-4">
+          <iframe class="iframe-map container-fluid" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3283.68710044284!2d-58.43257228416723!3d-34.612072965448675!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x95bcca429815227f%3A0x5d302e497c2cda87!2sR%C3%ADo%20de%20Janeiro%20300%2C%20C1405CCB%20CABA!5e0!3m2!1ses-419!2sar!4v1636547963306!5m2!1ses-419!2sar" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+        </div>
+      </main>
 
     <footer class="footer-container bg-dark text-light">
       
