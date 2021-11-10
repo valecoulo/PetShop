@@ -1,9 +1,8 @@
-@import url('https://fonts.googleapis.com/css2?family=Mochiy+Pop+P+One&display=swap');
-
+@import url("https://fonts.googleapis.com/css2?family=Mochiy+Pop+P+One&display=swap");
 
 fieldset {
-    width: 40vh;
-    margin: 1.5rem;
+  width: 40vh;
+  margin: 1.5rem;
 }
 
 /* BODY */
@@ -14,174 +13,162 @@ background-color: rgba(2, 2, 2, 0.096);
 }
 /* HEADER Y NAVBAR*/ 
 header {
-    margin-bottom: 3rem;
-
+  margin-bottom: 3rem;
 }
 
 #logo-navbar {
-    width: 4rem;
-    height: 4rem;
+  width: 4rem;
+  height: 4rem;
 }
 
-nav {  
-    min-height: 10vh; 
+nav {
+  min-height: 10vh;
 }
 
 nav ul li {
-    font-size: 1.3rem;
+  font-size: 1.3rem;
 }
-
 
 /* CAROUSEL BANNER */
 
 #carouselExampleControls {
-    margin: 0 1.5rem;
-    margin-bottom: 3rem;
+  margin: 0 1.5rem;
+  margin-bottom: 3rem;
 }
 
-
-
-.carousel-content h1{
-    padding: 18rem 3rem 0rem 3rem;
-    color: white;
-    text-shadow: 2px 2px 6px #000000;
+.carousel-content h1 {
+  padding: 18rem 3rem 0rem 3rem;
+  color: white;
+  text-shadow: 2px 2px 6px #000000;
 }
 
 .foto-carousel-1 {
-    height: 70vh;
-    width: 100%;
-    background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)),url(../assets/the-pet-shop-steve-crisp.jpg);
-    background-position: bottom;
-    background-size: cover;
+  height: 70vh;
+  width: 100%;
+  background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)),
+    url(../assets/the-pet-shop-steve-crisp.jpg);
+  background-position: bottom;
+  background-size: cover;
 }
 
 .foto-carousel-2 {
-    height: 70vh;
-    width: 100%;
-    background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)),url(../assets/pet-shop-jenny-newland.jpg);
-    background-position: top;
-    background-size: cover;
+  height: 70vh;
+  width: 100%;
+  background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)),
+    url(../assets/pet-shop-jenny-newland.jpg);
+  background-position: top;
+  background-size: cover;
 }
 
 .foto-carousel-3 {
-    height: 70vh;
-    width: 100%;
-    background-image:linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url(../assets/Pet-Shop_WEB_a4ba0aed-5a41-414a-afb7-5739da148c44.jpg);
-    background-position: center;
-    background-size: cover;
+  height: 70vh;
+  width: 100%;
+  background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)),
+    url(../assets/Pet-Shop_WEB_a4ba0aed-5a41-414a-afb7-5739da148c44.jpg);
+  background-position: center;
+  background-size: cover;
 }
 
-
 #heroe-container {
-    min-height: 90vh;
+  min-height: 90vh;
 }
 
 .container-item1 {
-    transform: rotate(-15deg);
+  transform: rotate(-15deg);
 }
 
 #heroe-banner {
-    min-height: 90vh;
-    display: flex;
-    background-image: url(../assets/logobanner.png);
-    background-size: cover;    
-    
+  min-height: 90vh;
+  display: flex;
+  background-image: url(../assets/logobanner.png);
+  background-size: cover;
 }
 
 h1 {
-    height: 100%;
-    font-size: 3.7rem;
-    text-align: center;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    color: black;
-    font-family: 'Mochiy Pop P One', sans-serif;
+  height: 100%;
+  font-size: 3.7rem;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: black;
+  font-family: "Mochiy Pop P One", sans-serif;
 }
 
 /*MAIN */
 
 main {
-    margin: 0 1.5rem;
+  margin: 0 1.5rem;
 }
-
 
 #container-main-1 {
-    margin-bottom: 3rem;
+  margin-bottom: 3rem;
 }
 
-
 .main-container {
-    min-height:90vh;
-    display: flex;
+  min-height: 90vh;
+  display: flex;
 }
 
 .div-main {
-    min-height: 90vh;
-    font-family: 'Mochiy Pop P One', sans-serif;
-    
+  min-height: 90vh;
+  font-family: "Mochiy Pop P One", sans-serif;
 }
 
 .contact-main h1 {
-    padding-left: 5rem;
+  padding-left: 5rem;
 }
 
 main .div-main-1 {
-    display: flex; 
-    color: white;
-     align-items: center;
-    justify-content: center;
-    border-radius: 0 17rem 10rem 10rem ;
+  display: flex;
+  color: white;
+  align-items: center;
+  justify-content: center;
+  border-radius: 0 17rem 10rem 10rem;
 }
 
 main .circle-container {
-    padding-top: 3rem;
-    min-height: 60vh;
-    border-radius: 25%;
-    width: 80%;
-    -webkit-border-radius: 25%;
-    -moz-border-radius: 25%;
-    -ms-border-radius: 25%;
-    -o-border-radius: 25%;
+  padding-top: 3rem;
+  min-height: 60vh;
+  border-radius: 25%;
+  width: 80%;
+  -webkit-border-radius: 25%;
+  -moz-border-radius: 25%;
+  -ms-border-radius: 25%;
+  -o-border-radius: 25%;
 }
 
-main .div-main-1 h2{
-    text-align: center;
-    font-size: 2.5rem;
-    margin-bottom: 2rem;
-    
+main .div-main-1 h2 {
+  text-align: center;
+  font-size: 2.5rem;
+  margin-bottom: 2rem;
 }
 
-main .div-main-1 p{
-    font-size: 0.9rem;
-    text-align: justify;
-    
+main .div-main-1 p {
+  font-size: 0.9rem;
+  text-align: justify;
 }
-    
-    
-
 
 main .div-main-2 {
-    background-image: url(../assets/veterinario-img.png);
-    background-position: top;
-    background-size: cover;
-    
+  background-image: url(../assets/veterinario-img.png);
+  background-position: top;
+  background-size: cover;
 }
 textarea {
-    width: 100%;
-    margin: .6rem auto;
-    border: none;
-    border-radius: .5rem;
+  width: 100%;
+  margin: 0.6rem auto;
+  border: none;
+  border-radius: 0.5rem;
 }
 .iframe-map {
-    border-radius: .5rem;
-    box-shadow: 0px 0px 5px #000000;
+  border-radius: 0.5rem;
+  box-shadow: 0px 0px 5px #000000;
 }
 .form-style {
-    background-color: #8080801c;
-    border-radius: .6rem;
-    padding: 1rem 0;
-    box-shadow: 0px 0px 8px #000000;
+  background-color: #8080801c;
+  border-radius: 0.6rem;
+  padding: 1rem 0;
+  box-shadow: 0px 0px 8px #000000;
 }
 
 .contact-bg-image {
@@ -194,21 +181,71 @@ textarea {
 /* FOOTER */
 
 footer {
-    height: 10vh;
-    font-family:'Mochiy Pop P One', sans-serif;
-    
+  height: 10vh;
+  font-family: "Mochiy Pop P One", sans-serif;
 }
 
 footer ul {
-    list-style: none;
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-    padding-top: 1rem;
-    height: 10vh;
+  list-style: none;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  padding-top: 1rem;
+  height: 10vh;
 }
 
 footer ul li a {
-    text-decoration: none;
-    color: white;
+  text-decoration: none;
+  color: white;
+}
+
+/* TARJETAS */
+
+.card {
+  width: 17rem;
+}
+
+.card-body {
+  display: flex;
+  flex-direction: column;
+  height: 500px;
+}
+
+.card-img {
+  height: 40%;
+}
+
+.card-title {
+  height: 15%;
+}
+
+.card-description {
+  height: 30%;
+}
+
+.card-text {
+  height: 5%;
+}
+
+.card-btn {
+  align-self: flex-end;
+  width: 70%;
+}
+
+.description {
+  display: block;
+  font-size: 1.2rem;
+  position: absolute;
+  height: 0;
+  top: 0;
+  opacity: 0;
+  padding: 18px 8%;
+  background-color: white;
+  overflow-y: scroll;
+  transition: 0.8s ease;
+}
+
+.card-description:hover .description {
+  opacity: 1;
+  height: 80%;
 }
