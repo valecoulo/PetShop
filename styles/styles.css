@@ -249,3 +249,7 @@ footer ul li a {
   opacity: 1;
   height: 80%;
 }
+
+.swal2-styled.swal2-confirm {
+  background-color: black !important;
+}
