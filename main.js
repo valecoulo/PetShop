@@ -27,10 +27,14 @@ function renderArticulos(array) {
 }
 
 function printMainFunctions(array) {
+  let search = document.querySelector("#buscador");
+  search.addEventListener("search", () => {
+    console.log("value: "+ search.value)
+    
+  })
+  
   let juguetes = array.filter((articulo) => articulo.tipo === "Juguete");
-  let farmacia = array.filter(
-    (articulo) => articulo.tipo === "Medicamento"
-  );
+  let farmacia = array.filter((articulo) => articulo.tipo === "Medicamento");
 
   document.title === "Juguetes" ? renderArticulos(juguetes) : renderArticulos(farmacia);
   let loader = document.querySelectorAll(".loader");
@@ -48,4 +52,3 @@ fetch(url)
     printMainFunctions(articulos);
 
   });
-  
