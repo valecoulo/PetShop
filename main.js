@@ -44,6 +44,6 @@ fetch(url)
 
       let loader = document.querySelectorAll(".loader");
       loader = Array.from(loader)
-      loader.forEach(load => load.style.display = "none")
+      loader.forEach(load => load.style.display = "none");
     
   });
