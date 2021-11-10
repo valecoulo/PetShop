@@ -72,17 +72,17 @@
           <form action="" class="col-12 col-md-6 mb-5 m-auto form-style">
               <div class="col-6 m-auto">
                 <label class="form-label fw-bold" for="nombre">Nombre:</label>
-                <input class="form-control" type="text" name="nombre" placeholder="Nombre" id="nombre">
+                <input class="form-control" type="text" name="nombre" placeholder="Nombre" id="nombre" required>
                   
                 <label class="form-label fw-bold" for="apellido">Apellido:</label>
-                <input class="form-control" type="text" name="apellido" placeholder="Apellido" id="apellido">
+                <input class="form-control" type="text" name="apellido" placeholder="Apellido" id="apellido" required>
               </div>
               <div class="col-6 m-auto">
                 <label class="form-label fw-bold" for="telefono">Teléfono:</label>
-                <input class="form-control" type="tel" name="telefono" id="telefono">
+                <input class="form-control" type="tel" name="telefono" id="telefono" required>
 
                 <label class="form-label fw-bold" for="email">Email:</label>
-                <input class="form-control" type="email" name="email" id="email" placeholder="correo@correo.com">
+                <input class="form-control" type="email" name="email" id="email" placeholder="correo@correo.com" required>
               </div>
               <fieldset class="col-6 m-auto">  
                       <legend class="form-label fw-bold"> Mascotas: </legend>
@@ -97,7 +97,7 @@
                 <textarea name="mensaje" id="mensaje" rows="10" placeholder="Escriba un Mensaje"></textarea>
               </div>
               <div class="col-6 m-auto">
-                <button type="submit" class="btn btn-secondary col-12" id="buttonSubmit">Enviar</button>
+                <button type="submit" class="btn btn-primary col-12" id="buttonSubmit">Enviar</button>
               </div> 
               
             </form>
