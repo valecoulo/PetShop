@@ -6,9 +6,12 @@ fieldset {
     margin: 1.5rem;
 }
 
+/* BODY */
 
+body{
+background-color: rgba(2, 2, 2, 0.096);
 
-
+}
 /* HEADER Y NAVBAR*/ 
 header {
     margin-bottom: 3rem;
@@ -182,7 +185,7 @@ textarea {
 }
 
 .contact-bg-image {
-    background-image: url(../assets/Jack-Russell-Terrier-Holding-a-blue-phone.jpg);
+    background-image: url(../assets/1636583220398.png);
     background-position: top;
     background-size: 20rem;
     background-repeat: no-repeat;
