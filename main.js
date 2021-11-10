@@ -41,4 +41,9 @@ fetch(url)
     document.title === "Juguetes"
       ? renderArticulos(juguetes)
       : renderArticulos(farmacia);
+
+      let loader = document.querySelectorAll(".loader");
+      loader = Array.from(loader)
+      loader.forEach(load => load.style.display = "none")
+    
   });
