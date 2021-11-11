@@ -93,7 +93,7 @@ nav ul li {
 
 h1 {
   height: 100%;
-  font-size: 3.7rem;
+  font-size: 3.3rem;
   text-align: center;
   display: flex;
   justify-content: center;
@@ -184,6 +184,10 @@ textarea {
     background-position: top;
     background-size: 20rem;
     background-repeat: no-repeat;
+}
+
+#cont-buscador input {
+    width: 20rem;
 }
 
 /* FOOTER */
