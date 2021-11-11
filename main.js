@@ -1,3 +1,5 @@
+const cartItemsElement = document.querySelector(".cart-items");
+
 function renderArticulos(array) {
   let newDiv = document.querySelector("#articulos");
   newDiv.innerHTML = "";
@@ -18,12 +20,60 @@ function renderArticulos(array) {
                           : "Stock: " + articulo.stock
                       }</p>
                       <p class="card-text fs-5 ">Precio: $${articulo.precio}</p>
-                      <a href="#" class="btn btn-primary">Añadir al Carro</a>
+                      <a href="#" class="btn btn-primary" onclick="addToCart(${articulo.id})">Añadir al Carro</a>
                   </div>    
               </div>
           `;
     main.appendChild(newDiv);
   });
+}
+
+let cart = JSON.parse(localStorage.getItem("CART")) || [];
+updateCart()
+
+function addToCart (id) {
+  if(cart.some((item) => item.id === id)) {
+      alert("Product already in cart!");
+  } else {
+      const item = products.find((product) => product.id === id);
+
+      cart.push({
+          ...item,
+          numberOfUnits: 1,
+      });
+
+      console.log(item)
+  }
+  updateCart();
+}
+
+function updateCart() {
+  renderCartItems();
+  // renderSubtotal();
+
+  localStorage.setItem("CART", JSON.stringify(cart))
+}
+
+function renderCartItems() {
+  cartItemsElement.innerHTML = "";
+  cart.forEach((articulo) => {
+      cartItemsElement.innerHTML += `
+      <div class="cart-item">
+          <div class="cart-info">
+              <img src="${articulo.imagen}" alt="${articulo.nombre}">
+              <h4>${articulo.nombre}</h4>
+          </div>
+          <div class="unit-price">
+              ${articulo.precio}
+          </div>
+          <div class="units">
+              <div class="btn minus" onclick="changeNumberOfUnits('minus', ${articulo.id})">-</div>
+              <div class="number">${articulo.NumberOfUnits}</div>
+              <div class="btn plus" onclick="changeNumberOfUnits('plus', ${articulo.id})">+</div>
+          </div>
+      </div>
+      `
+  })
 }
 
 function printMainFunctions(array) {
