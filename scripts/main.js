@@ -21,7 +21,7 @@ function renderArticulos(array) {
                             : "Stock: " + articulo.stock
                         }</p>
                       <p class="card-text fs-5 fw-bold">Precio: $${articulo.precio}</p>
-                      <a href="#" class="btn btn-danger card-btn">Añadir al Carro</a>
+                      <button class="btn btn-danger card-btn " id="${articulo._id}">Añadir al Carro</a>
                   </div>   
               </div>
             
@@ -59,6 +59,14 @@ function printMainFunctions(array) {
   let loader = document.querySelector(".loader");
 
   loader.style.display = "none";
+  const botonCarrito = document.querySelectorAll(".card-btn");
+  botonCarrito.forEach(boton => {
+    boton.addEventListener("click", e => {
+      const item = array.find((producto) => producto._id === e.target.id);
+      console.log(item)
+    })
+  })
+
 }
 
 let url = "https://apipetshop.herokuapp.com/api/articulos";
@@ -67,7 +75,7 @@ fetch(url)
   .then((res) => res.json())
   .then((data) => {
     let articulos = data.response;
-
+    console.log(articulos)
     printMainFunctions(articulos);
   });
 
