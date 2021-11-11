@@ -60,14 +60,20 @@
         </div>
     </header>
 
-    <main class="container-fluid col-8 "> 
-        <h1 class="text-center p-5">Juguetes</h1>
-        <div class="d-flex justify-content-center pb-4 pt-4">    
+    <main>
+      <h1 class="text-center p-5">Farmacia</h1>
+      <div id="cont-buscador" class="d-flex justify-content-center">
+          <input type="search" name="buscador" id="buscador" placeholder="Buscar articulo" value="" class="p-2">
+      </div> 
+      <div class="d-flex justify-content-center pb-4 pt-4">    
           <div class="spinner-border text-dark loader" role="status">
               <span class="visually-hidden">Loading...</span>
           </div>
-        </div>
-    </main>
+      </div>
+      <div id="articulos" class="row d-flex justify-content-center">
+
+      </div>
+  </main>
 
     <footer class="footer-container bg-dark text-light">
       <div class="footer-items col-12">
