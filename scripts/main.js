@@ -33,7 +33,7 @@ function renderArticulos(array) {
 function printMainFunctions(array) {
   let juguetes = array.filter((articulo) => articulo.tipo === "Juguete");
   let farmacia = array.filter((articulo) => articulo.tipo === "Medicamento");
-  document.title === "Juguetes"
+  document.title === "Juguetes - Franco Pet Shop"
     ? renderArticulos(juguetes)
     : renderArticulos(farmacia);
 
