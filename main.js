@@ -49,9 +49,9 @@ function printMainFunctions(array) {
   })
 
   // document.title === "Juguetes" ? renderArticulos(juguetes) : renderArticulos(farmacia);
-  let loader = document.querySelectorAll(".loader");
-  loader = Array.from(loader)
-  loader.forEach(load => load.style.display = "none");
+  let loader = document.querySelector(".loader");
+
+   loader.style.display = "none"
 }
 
 let url = "https://apipetshop.herokuapp.com/api/articulos";
