@@ -5,7 +5,7 @@ function renderArticulos(array) {
   array.forEach((articulo) => {
     newDiv.innerHTML += `
           
-              <div class="card m-2 cont-art col-10 col-md-5 col-lg-4 col-xl-4">
+              <div class="articulo card m-2 cont-art col-10 col-md-5 col-lg-4 col-xl-4">
                   <div class="card-body">
                       <img class="card-img" src="${
                         articulo.imagen
@@ -33,7 +33,7 @@ function renderArticulos(array) {
 function printMainFunctions(array) {
   let juguetes = array.filter((articulo) => articulo.tipo === "Juguete");
   let farmacia = array.filter((articulo) => articulo.tipo === "Medicamento");
-  document.title === "Juguetes - Franco Pet Shop"
+  document.title.includes("Juguetes")
     ? renderArticulos(juguetes)
     : renderArticulos(farmacia);
 
@@ -50,7 +50,7 @@ function printMainFunctions(array) {
         return medicamento;
       }
     });
-    document.title === "Juguetes"
+    document.title.includes("Juguetes")
       ? renderArticulos(juguetesFiltrados)
       : renderArticulos(farmaciaFiltrados);
   });
@@ -75,8 +75,8 @@ fetch(url)
   .then((res) => res.json())
   .then((data) => {
     let articulos = data.response;
-    console.log(articulos)
-    printMainFunctions(articulos);
+
+    printMainFunctions(articulos);  
   });
 
 function truncate(str, n) {
