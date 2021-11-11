@@ -31,6 +31,10 @@ nav ul li {
   font-size: 1.3rem;
 }
 
+.navbar-toggler{
+  background-color: rgb(211, 211, 211)
+}
+
 /* CAROUSEL BANNER */
 
 #carouselExampleControls {
