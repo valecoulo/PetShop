@@ -14,11 +14,13 @@ background-color: rgba(2, 2, 2, 0.096);
 /* HEADER Y NAVBAR*/ 
 header {
   margin-bottom: 3rem;
+  font-weight: bold;
 }
 
 #logo-navbar {
   width: 4rem;
   height: 4rem;
+  margin-bottom: 1rem;
 }
 
 nav {
@@ -136,6 +138,7 @@ main .circle-container {
   -moz-border-radius: 25%;
   -ms-border-radius: 25%;
   -o-border-radius: 25%;
+  text-shadow: 0 1px 0 rgb(0, 0, 0);
 }
 
 main .div-main-1 h2 {
