@@ -12,14 +12,14 @@ function renderArticulos(array) {
                       }" width="150px" alt="imagen" class="card-img-top">
                       <h3 class="card-title fs-5">${articulo.nombre}</h3>
                       <div class="card-description"> 
-                        <p>${truncate(articulo.descripcion, 80)}</p>
+                        <p>${truncate(articulo.descripcion, 120)}</p>
                         <p class="description fs-6">${articulo.descripcion}</p>
+                      </div>
                         <p class="card-text fw-bold">${
                           articulo.stock <= 5
                             ? "Stock: <b style='color: red;'>¡Ultimas unidades!</b>"
                             : "Stock: " + articulo.stock
                         }</p>
-                      </div>
                       <p class="card-text fs-5 fw-bold">Precio: $${articulo.precio}</p>
                       <a href="#" class="btn btn-danger card-btn">Añadir al Carro</a>
                   </div>   
