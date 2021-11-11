@@ -5,7 +5,7 @@ function renderArticulos(array) {
   array.forEach((articulo) => {
     newDiv.innerHTML += `
           
-              <div class="card m-2" >
+              <div class="card m-2 cont-art col-10 col-md-5 col-lg-4 col-xl-4">
                   <div class="card-body">
                       <img class="card-img" src="${
                         articulo.imagen
@@ -14,13 +14,13 @@ function renderArticulos(array) {
                       <div class="card-description"> 
                         <p>${truncate(articulo.descripcion, 80)}</p>
                         <p class="description fs-6">${articulo.descripcion}</p>
-                        <p class="card-text">${
+                        <p class="card-text fw-bold">${
                           articulo.stock <= 5
-                            ? "Ultima unidades"
+                            ? "Stock: <b style='color: red;'>¡Ultimas unidades!</b>"
                             : "Stock: " + articulo.stock
                         }</p>
                       </div>
-                      <p class="card-text fs-5 ">Precio: $${articulo.precio}</p>
+                      <p class="card-text fs-5 fw-bold">Precio: $${articulo.precio}</p>
                       <a href="#" class="btn btn-danger card-btn">Añadir al Carro</a>
                   </div>   
               </div>
