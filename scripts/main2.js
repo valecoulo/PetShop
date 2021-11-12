@@ -1,6 +1,8 @@
 const url = "https://apipetshop.herokuapp.com/api/articulos";
 const productosEl = document.querySelector("#articulos");
 const cartItemsEl = document.querySelector("#cart-items");
+const subtotalEl = document.querySelector(".subtotal");
+const totalItemsInCartEl = document.querySelector(".total-items-in-cart");
 
 var articulos = [];
 
@@ -29,11 +31,17 @@ async function traerProductos() {
   const botonCarrito = document.querySelectorAll(".card-btn");
   botonCarrito.forEach((boton) => {
     boton.addEventListener("click", (e) => {
-      const item = articulos.find((producto) => producto._id === e.target.id);
+      if (cart.some((item) => item._id === e.target.id)) {
+        changeNumberOfUnits("plus", e.target.id);
+      } else {
+        const item = articulos.find((product) => product._id === e.target.id);
+
+        cart.push({
+          ...item,
+          numberOfUnits: 1,
+        });
+      }
       console.log(cart);
-      cart.push({
-        ...item,
-      });
       updateCart();
     });
   });
@@ -73,19 +81,9 @@ let cart = JSON.parse(localStorage.getItem("CART")) || [];
 //let cart = [];
 updateCart();
 
-function addToCart(id) {
-  const item = products.find((product) => product._id === id);
-
-  cart.push({
-    ...item,
-  });
-
-  updateCart();
-}
-
 function updateCart() {
   renderCartItems();
-  //renderSubtotal();
+  renderSubtotal();
 
   // save cart to local storage
   localStorage.setItem("CART", JSON.stringify(cart));
@@ -97,14 +95,34 @@ function renderCartItems() {
     cartItemsEl.innerHTML += `
           <div class="cart-item ">
           <div class="d-flex">   
-            <img width="80" height="80" src="${item.imagen}" alt="${item.nombre}"></img>
+            <img width="80" height="80" src="${item.imagen}" alt="${
+      item.nombre
+    }"></img>
              <p>${item.nombre}</p>
               <p>$${item.precio}</p>
               </div>
-              <button id="${item._id}" type="button" class=" btn btn-danger remove" >Quitar</button>
+              <div class="units">
+              <button class="btn minus" onclick="changeNumberOfUnits('minus', ${parseInt(
+                item._id,
+                16
+              )})">-</button>
+              <div class="number">${item.numberOfUnits}</div>
+              <button id="${
+                item.id
+              }" class="btn plus" onclick="(e)=>{console.log(e)}">+</button>           
+          </div>
+              <button id="${
+                item._id
+              }" type="button" class=" btn btn-danger remove" >Quitar</button>
           </div>
         `;
   });
+
+  /* let btnPlus = document.querySelector();
+  btnPlus.addEventListener("click", (e) => {
+    changeNumberOfUnits("plus", e.target.id);
+  }); */
+
   let btnsQuitar = document.querySelectorAll(".remove");
 
   btnsQuitar.forEach((boton) => {
@@ -113,6 +131,42 @@ function renderCartItems() {
       updateCart();
     });
   });
+}
+
+function changeNumberOfUnits(action, id) {
+  cart = cart.map((item) => {
+    let numberOfUnits = item.numberOfUnits;
+
+    if (item._id === id) {
+      if (action === "minus" && numberOfUnits > 1) {
+        numberOfUnits--;
+      } else if (action === "plus" && numberOfUnits < item.stock) {
+        numberOfUnits++;
+      }
+    }
+
+    return {
+      ...item,
+      numberOfUnits,
+    };
+  });
+
+  updateCart();
+}
+
+function renderSubtotal() {
+  let totalPrice = 0,
+    totalItems = 0;
+
+  cart.forEach((item) => {
+    totalPrice += item.precio * item.numberOfUnits;
+    totalItems += item.numberOfUnits;
+  });
+
+  subtotalEl.innerHTML = `Subtotal (${totalItems} items): $${totalPrice.toFixed(
+    2
+  )}`;
+  //totalItemsInCartEl.innerHTML = totalItems;
 }
 
 /* function removeItemFromCart(id) {
