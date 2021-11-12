@@ -74,12 +74,18 @@
               </ul>
             </div>
           </div>
-          <a href="">
+          <!-- <a href="">
             <i
               style="color: white; font-size: 2rem"
               class="fas fa-cart-plus"
             ></i>
-          </a>
+          </a> -->
+          <button type="button" class="btn" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
+            <i style="color: white; font-size: 2rem;" class="fas fa-cart-plus"></i>
+          </button>
+          <div class="total-items-in-cart">
+            0
+        </div>
         </nav>
       </div>
     </header>
@@ -200,6 +206,26 @@
           <div class="div-main div-main-2 col-lg-6 col-12"></div>
         </div>
       </div>
+      <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="staticBackdropLabel">Checkout</h5>
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <div id="cart-items"></div>
+            </div>
+            <div class="modal-footer">
+                <div class="subtotal">
+                    Subtotal (0 items): $0
+                </div>
+              <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+              <button type="button" class="btn btn-primary">Confirmar compra</button>
+            </div>
+          </div>
+        </div>
+      </div>
     </main>
 
     <footer class="footer-container bg-dark text-light">
@@ -228,5 +254,6 @@
       src="https://kit.fontawesome.com/5c3e255077.js"
       crossorigin="anonymous"
     ></script>
+    <script src="./scripts/main2.js"></script>
   </body>
 </html>

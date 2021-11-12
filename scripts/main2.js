@@ -45,10 +45,32 @@ async function traerProductos() {
       updateCart();
     });
   });
+
+  /* const search = document.querySelector("#buscador");
+  search.addEventListener("keyup", (e) => {
+    const buscar = e.target.value.toLowerCase();
+    const juguetesFiltrados = juguetes.filter((juguete) => {
+      if (juguete.nombre.toLowerCase().includes(buscar)) {
+        return juguete;
+      }
+    });
+    const farmaciaFiltrados = farmacia.filter((medicamento) => {
+      if (medicamento.nombre.toLowerCase().includes(buscar)) {
+        return medicamento;
+      }
+    });
+    document.title.includes("Juguetes")
+      ? renderProductos(juguetesFiltrados)
+      : renderProductos(farmaciaFiltrados);
+  }); */
 }
+
 function renderProductos(arr) {
+  let newDiv = document.querySelector("#articulos");
+  newDiv.innerHTML = "";
+  let main = document.querySelector("main");
   arr.forEach((articulo) => {
-    productosEl.innerHTML += `
+    newDiv.innerHTML += `
             <div class="articulo card m-2 cont-art col-10 col-md-5 col-lg-4 col-xl-4">
             <div class="card-body">
                 <img class="card-img" src="${
@@ -73,6 +95,7 @@ function renderProductos(arr) {
             </div>   
         </div>
             `;
+    main.appendChild(newDiv);
   });
 }
 traerProductos();
@@ -85,43 +108,52 @@ function updateCart() {
   renderCartItems();
   renderSubtotal();
 
-  // save cart to local storage
   localStorage.setItem("CART", JSON.stringify(cart));
 }
 
 function renderCartItems() {
-  cartItemsEl.innerHTML = ""; // clear cart element
+  cartItemsEl.innerHTML = "";
   cart.forEach((item) => {
     cartItemsEl.innerHTML += `
           <div class="cart-item ">
           <div class="d-flex">   
-            <img width="80" height="80" src="${item.imagen}" alt="${
-      item.nombre
-    }"></img>
+            <img width="80" height="80" src="${item.imagen}" alt="${item.nombre}"></img>
              <p>${item.nombre}</p>
               <p>$${item.precio}</p>
               </div>
               <div class="units">
-              <button class="btn minus" onclick="changeNumberOfUnits('minus', ${parseInt(
-                item._id,
-                16
-              )})">-</button>
+              <button id="${item._id}" class="btn minus cantidad" action="minus" >-</button>
               <div class="number">${item.numberOfUnits}</div>
-              <button id="${
-                item.id
-              }" class="btn plus" onclick="(e)=>{console.log(e)}">+</button>           
+              <button id="${item._id}" action ="plus" class="btn plus cantidad">+</button>           
           </div>
-              <button id="${
-                item._id
-              }" type="button" class=" btn btn-danger remove" >Quitar</button>
+              <button id="${item._id}" type="button" class=" btn btn-danger remove" >Quitar</button>
           </div>
         `;
   });
 
-  /* let btnPlus = document.querySelector();
-  btnPlus.addEventListener("click", (e) => {
-    changeNumberOfUnits("plus", e.target.id);
-  }); */
+  let btnCant = document.querySelectorAll(".cantidad");
+  btnCant.forEach((boton) => {
+    boton.addEventListener("click", (e) => {
+      cart = cart.map((item) => {
+        let numberOfUnits = item.numberOfUnits;
+
+        if (item._id === e.target.id) {
+          if (e.target.innerHTML === "-" && numberOfUnits > 1) {
+            numberOfUnits--;
+          } else if (e.target.innerHTML === "+" && numberOfUnits < item.stock) {
+            numberOfUnits++;
+          }
+        }
+
+        return {
+          ...item,
+          numberOfUnits,
+        };
+      });
+
+      updateCart();
+    });
+  });
 
   let btnsQuitar = document.querySelectorAll(".remove");
 
@@ -131,27 +163,6 @@ function renderCartItems() {
       updateCart();
     });
   });
-}
-
-function changeNumberOfUnits(action, id) {
-  cart = cart.map((item) => {
-    let numberOfUnits = item.numberOfUnits;
-
-    if (item._id === id) {
-      if (action === "minus" && numberOfUnits > 1) {
-        numberOfUnits--;
-      } else if (action === "plus" && numberOfUnits < item.stock) {
-        numberOfUnits++;
-      }
-    }
-
-    return {
-      ...item,
-      numberOfUnits,
-    };
-  });
-
-  updateCart();
 }
 
 function renderSubtotal() {
@@ -166,14 +177,8 @@ function renderSubtotal() {
   subtotalEl.innerHTML = `Subtotal (${totalItems} items): $${totalPrice.toFixed(
     2
   )}`;
-  //totalItemsInCartEl.innerHTML = totalItems;
+  totalItemsInCartEl.innerHTML = totalItems;
 }
-
-/* function removeItemFromCart(id) {
-  cart = cart.filter((item) => item._id !== id);
-
-  updateCart();
-} */
 
 function truncate(str, n) {
   return str?.length > n ? str.substr(0, n - 1) + "..." : str;
