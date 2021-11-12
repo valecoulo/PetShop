@@ -95,9 +95,17 @@ function renderCartItems() {
               <p>${item.nombre}</p>
               <p>$${item.precio}</p>
               
-              <button id="remove" type="button" class="btn btn-danger" >Quitar</button>
+              <button id="${item._id}" type="button" class="btn btn-danger remove" >Quitar</button>
           </div>
         `;
+  });
+  let btnsQuitar = document.querySelectorAll(".remove");
+
+  btnsQuitar.forEach((boton) => {
+    boton.addEventListener("click", (e) => {
+      cart = cart.filter((item) => item._id !== e.target.id);
+      updateCart();
+    });
   });
 }
 
