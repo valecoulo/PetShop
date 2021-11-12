@@ -7,12 +7,12 @@ fieldset {
 
 /* BODY */
 
-body{
-background-color: rgba(2, 2, 2, 0.096);
-background-image:linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)) , url(../assets/huesitosypatitas.png);
-
+body {
+  background-color: rgba(2, 2, 2, 0.096);
+  background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)),
+    url(../assets/huesitosypatitas.png);
 }
-/* HEADER Y NAVBAR*/ 
+/* HEADER Y NAVBAR*/
 header {
   margin-bottom: 3rem;
   font-weight: bold;
@@ -32,10 +32,9 @@ nav ul li {
   font-size: 1.3rem;
 }
 
-.navbar-toggler{
-  background-color: rgb(211, 211, 211)
+.navbar-toggler {
+  background-color: rgb(211, 211, 211);
 }
-
 
 /* CAROUSEL BANNER */
 
@@ -99,7 +98,7 @@ h1 {
   display: flex;
   justify-content: center;
   align-items: center;
-  color:white;
+  color: white;
   font-family: "Mochiy Pop P One", sans-serif;
   text-shadow: 0 3.5px 0 rgb(0, 0, 0);
 }
@@ -108,7 +107,6 @@ h1 {
 
 main {
   margin: 0 1.5rem;
-  
 }
 
 #container-main-1 {
@@ -184,32 +182,28 @@ textarea {
   box-shadow: 0px 0px 8px #000000;
   color: white;
   text-shadow: 0px 0px 6px #000000;
-
 }
 
 .contact-bg-image {
-    background-image: url(../assets/1636583220398.png);
-    background-position: top;
-    background-size: 20rem;
-    background-repeat: no-repeat;
+  background-image: url(../assets/1636583220398.png);
+  background-position: top;
+  background-size: 20rem;
+  background-repeat: no-repeat;
 }
 
 #cont-buscador input {
-    width: 20rem;
+  width: 20rem;
 }
-#buttonSubmit{
+#buttonSubmit {
   background-color: #508eb5de;
   color: white;
   text-shadow: 0px 0px 6px #000000;
   box-shadow: 0px 0px 3px #000000;
   margin: 1rem auto;
-  
-
 }
-#buttonSubmit:hover{
+#buttonSubmit:hover {
   background-color: #1396e7de;
   box-shadow: 0px 0px 10px #000000;
-
 }
 
 /* FOOTER */
@@ -259,7 +253,6 @@ footer ul li a {
   height: 5%;
 }
 
-
 .description {
   display: block;
   font-size: 1.2rem;
@@ -284,15 +277,18 @@ footer ul li a {
 
 .cont-art {
   box-shadow: 0 0 4px #696969e5;
-  transition: .4s;
+  transition: 0.4s;
   max-width: 30rem;
 }
 
 .cont-art:hover {
   box-shadow: 0 0 14px #3f3f3fe1;
-  transition: .6s;
+  transition: 0.6s;
 }
 
 ul {
   margin-bottom: 0;
+}
+
+#cart-items {
 }
