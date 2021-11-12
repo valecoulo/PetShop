@@ -115,23 +115,24 @@ function renderCartItems() {
   cartItemsEl.innerHTML = "";
   cart.forEach((item) => {
     cartItemsEl.innerHTML += `
-          <div class="cart-item ">
-          <div class="d-flex">   
+        <div class="cart-item ">
+        <hr>
+        <div class="d-flex">   
             <img width="80" height="80" src="${item.imagen}" alt="${item.nombre}"></img>
              <p>${item.nombre}</p>
               <p>$${item.precio}</p>
-              </div>
-              <div class="units">
-              <button id="${item._id}" class="btn minus cantidad" action="minus" >-</button>
-              <div class="number">${item.numberOfUnits}</div>
-              <button id="${item._id}" action ="plus" class="btn plus cantidad">+</button>           
-          </div>
-              <button id="${item._id}" type="button" class=" btn btn-danger remove" >Quitar</button>
-          </div>
+        </div>
+        <div class="units d-flex justify-content-end">
+            <button id="${item._id}" class="btn-warning  btn-cantidad m-2" >-</button>
+            <div class="number m-1">${item.numberOfUnits}</div>
+            <button id="${item._id}" class="btn-warning plus btn-cantidad m-2">+</button> 
+            <button id="${item._id}" type="button" class=" btn btn-danger remove" >Quitar</button>          
+            
+        </div> 
         `;
   });
 
-  let btnCant = document.querySelectorAll(".cantidad");
+  let btnCant = document.querySelectorAll(".btn-cantidad");
   btnCant.forEach((boton) => {
     boton.addEventListener("click", (e) => {
       cart = cart.map((item) => {
