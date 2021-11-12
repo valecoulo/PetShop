@@ -22,6 +22,10 @@ async function traerProductos() {
     ? renderProductos(juguetes)
     : renderProductos(farmacia);
 
+  let loader = document.querySelector(".loader");
+
+  loader.style.display = "none";
+
   const botonCarrito = document.querySelectorAll(".card-btn");
   botonCarrito.forEach((boton) => {
     boton.addEventListener("click", (e) => {
@@ -91,11 +95,13 @@ function renderCartItems() {
   cartItemsEl.innerHTML = ""; // clear cart element
   cart.forEach((item) => {
     cartItemsEl.innerHTML += `
-          <div class="cart-item">
-              <p>${item.nombre}</p>
+          <div class="cart-item ">
+          <div class="d-flex">   
+            <img width="80" height="80" src="${item.imagen}" alt="${item.nombre}"></img>
+             <p>${item.nombre}</p>
               <p>$${item.precio}</p>
-              
-              <button id="${item._id}" type="button" class="btn btn-danger remove" >Quitar</button>
+              </div>
+              <button id="${item._id}" type="button" class=" btn btn-danger remove" >Quitar</button>
           </div>
         `;
   });
