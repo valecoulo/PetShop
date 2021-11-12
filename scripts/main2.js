@@ -91,7 +91,7 @@ function renderProductos(arr) {
                 }" width="150px" alt="imagen" class="card-img-top">
                 <h3 class="card-title fs-5">${articulo.nombre}</h3>
                 <div class="card-description"> 
-                  <p>${truncate(articulo.descripcion, 120)}</p>
+                  <p>${truncate(articulo.descripcion, 100)}</p>
                   <p class="description fs-6">${articulo.descripcion}</p>
                 </div>
                   <p class="card-text fw-bold">${
