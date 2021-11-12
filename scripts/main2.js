@@ -28,11 +28,24 @@ async function traerProductos() {
 
   loader.style.display = "none";
 
+  let alerta = document.querySelectorAll('.card-btn')
+
+  alerta.forEach(boton => {
+    boton.addEventListener('click', () => {
+      Swal.fire({
+        title: 'Añadiste el producto al carrito!',
+        backgroundColor: 'red',
+        imageUrl: './assets/carrito_meme.png',
+        imageHeight: 240
+    })
+    })
+  })
+
   const botonCarrito = document.querySelectorAll(".card-btn");
   botonCarrito.forEach((boton) => {
     boton.addEventListener("click", (e) => {
       if (cart.some((item) => item._id === e.target.id)) {
-        changeNumberOfUnits("plus", e.target.id);
+        // changeNumberOfUnits("plus", e.target.id);
       } else {
         const item = articulos.find((product) => product._id === e.target.id);
 
@@ -136,6 +149,7 @@ function renderCartItems() {
   btnCant.forEach((boton) => {
     boton.addEventListener("click", (e) => {
       cart = cart.map((item) => {
+
         let numberOfUnits = item.numberOfUnits;
 
         if (item._id === e.target.id) {
